@@ -1,0 +1,622 @@
+[
+    {
+        "id": "agriculture",
+        "title": "Agriculture & Farming",
+        "description": "Subsidies, crop insurance, and modern equipment grants for farmers.",
+        "icon": "Tractor",
+        "tableData": [
+            {
+                "scheme": "PM-KISAN",
+                "benefit": "Rs. 6000/year",
+                "eligibility": "Small & Marginal Farmers",
+                "status": "Active"
+            },
+            {
+                "scheme": "Crop Insurance (PMFBY)",
+                "benefit": "Yield Loss Coverage",
+                "eligibility": "All Farmers",
+                "status": "Active"
+            },
+            {
+                "scheme": "Tractor Subsidy",
+                "benefit": "Up to 50% Subsidy",
+                "eligibility": "Farmers with > 2 acres",
+                "status": "Closing Soon"
+            }
+        ],
+        "subheadings": [
+            {
+                "id": "overview",
+                "title": "Overview",
+                "content": "The Agriculture sector schemes aim to increase crop productivity, ensure fair prices, and provide financial security against natural calamities."
+            },
+            {
+                "id": "eligibility",
+                "title": "General Eligibility",
+                "content": "- Must be a registered farmer in the state database.\n- Land records (Chitta/Adangal) must be up to date.\n- Aadhaar linked bank account is mandatory."
+            },
+            {
+                "id": "process",
+                "title": "Application Process",
+                "content": "- Visit the nearest e-Seva center or Agriculture Extension Center.\n- Submit application with land documents and Aadhaar.\n- Wait for field verification by the VAO."
+            }
+        ]
+    },
+    {
+        "id": "healthcare",
+        "title": "Public Healthcare",
+        "description": "Comprehensive health insurance and maternity assistance programs.",
+        "icon": "HeartPulse",
+        "tableData": [
+            {
+                "scheme": "Chief Minister Health Insurance",
+                "benefit": "Up to Rs. 5 Lakhs",
+                "eligibility": "BPL Families",
+                "status": "Active"
+            },
+            {
+                "scheme": "Maternity Assistance (Dr. Muthulakshmi Reddy)",
+                "benefit": "Rs. 18,000",
+                "eligibility": "Pregnant Women",
+                "status": "Active"
+            }
+        ],
+        "subheadings": [
+            {
+                "id": "overview",
+                "title": "Overview",
+                "content": "Ensuring universal health coverage and reducing out-of-pocket expenditure for life-saving treatments."
+            },
+            {
+                "id": "hospitals",
+                "title": "Empaneled Hospitals",
+                "content": "Over 1000 government and private hospitals are empaneled under the state insurance scheme. Patients receive cashless complete care."
+            }
+        ]
+    },
+    {
+        "id": "education",
+        "title": "School & Higher Education",
+        "description": "Scholarships, free laptops, and breakfast schemes for students.",
+        "icon": "BookOpen",
+        "tableData": [
+            {
+                "scheme": "Pudhumai Penn",
+                "benefit": "Rs. 1000/month",
+                "eligibility": "Girl Students in Higher Ed",
+                "status": "Active"
+            },
+            {
+                "scheme": "Chief Minister's Breakfast",
+                "benefit": "Free Breakfast",
+                "eligibility": "Govt School Students Class 1-5",
+                "status": "Active"
+            },
+            {
+                "scheme": "Free Laptop Scheme",
+                "benefit": "1 Laptop",
+                "eligibility": "Class 11, 12 and College Students",
+                "status": "Active"
+            }
+        ],
+        "subheadings": [
+            {
+                "id": "overview",
+                "title": "Overview",
+                "content": "Promoting enrollment and reducing dropout rates through direct financial and infrastructural support to students."
+            },
+            {
+                "id": "documents",
+                "title": "Required Documents",
+                "content": "- Aadhaar Card\n- Previous Year Marksheet\n- Income Certificate\n- Community Certificate"
+            }
+        ]
+    },
+    {
+        "id": "women-welfare",
+        "title": "Women Empowerment",
+        "description": "Financial independence grants, marriage assistance, and SHG loans.",
+        "icon": "Users",
+        "tableData": [
+            {
+                "scheme": "Kalaignar Magalir Urimai Thittam",
+                "benefit": "Rs. 1000/month",
+                "eligibility": "Women Heads of Family",
+                "status": "Active"
+            },
+            {
+                "scheme": "Marriage Assistance",
+                "benefit": "Gold Coin + Cash",
+                "eligibility": "Poor Household Brides",
+                "status": "Active"
+            },
+            {
+                "scheme": "Free Bus Travel",
+                "benefit": "100% Free Travel",
+                "eligibility": "All Women in Ordinary City Buses",
+                "status": "Active"
+            }
+        ],
+        "subheadings": [
+            {
+                "id": "overview",
+                "title": "Overview",
+                "content": "Schemes designed to empower women financially and socially, ensuring equity and safe mobility."
+            },
+            {
+                "id": "shg",
+                "title": "Self Help Groups (SHG)",
+                "content": "Subsidized interest rates and revolving funds are provided to registered SHGs for entrepreneurship."
+            }
+        ]
+    },
+    {
+        "id": "housing",
+        "title": "Rural & Urban Housing",
+        "description": "Free housing for the homeless and subsidies for home construction.",
+        "icon": "Home",
+        "tableData": [
+            {
+                "scheme": "PMAY (Urban/Gramin)",
+                "benefit": "Up to Rs. 2.75 Lakhs Subsidy",
+                "eligibility": "EWS/LIG without Pakka House",
+                "status": "Waitlisted"
+            },
+            {
+                "scheme": "Kalaignar Veetu Vasathi",
+                "benefit": "Construction of Concrete Houses",
+                "eligibility": "Rural Hut Dwellers",
+                "status": "Active"
+            }
+        ],
+        "subheadings": [
+            {
+                "id": "overview",
+                "title": "Overview",
+                "content": "Aiming to provide a concrete roof over every family, eliminating hut dwellings across the state."
+            },
+            {
+                "id": "timeline",
+                "title": "Construction Timeline",
+                "content": "Funds are released in 4 stages: Basement, Lintel, Roof, and Completion. Geo-tagging is mandatory at each stage."
+            }
+        ]
+    },
+    {
+        "id": "youth-dev",
+        "title": "Youth Skill Development",
+        "description": "Skill training programs, free coaching, and placement assistance.",
+        "icon": "Target",
+        "tableData": [
+            {
+                "scheme": "Naan Mudhalvan",
+                "benefit": "Industry Skill Training",
+                "eligibility": "College Students",
+                "status": "Active"
+            },
+            {
+                "scheme": "Free IAS Coaching",
+                "benefit": "Stipend + Coaching",
+                "eligibility": "Aspirants clearing screening",
+                "status": "Active"
+            }
+        ],
+        "subheadings": [
+            {
+                "id": "overview",
+                "title": "Overview",
+                "content": "Bridging the industry-academia gap by providing futuristic skill training to make youth employable globally."
+            },
+            {
+                "id": "partners",
+                "title": "Industry Partners",
+                "content": "Partnered with major MNCs for curriculum design and direct placements upon program completion."
+            }
+        ]
+    },
+    {
+        "id": "msme",
+        "title": "MSME & Industries",
+        "description": "Subsidies, single-window clearances, and capital grants for startups.",
+        "icon": "Briefcase",
+        "tableData": [
+            {
+                "scheme": "NEEDS",
+                "benefit": "25% Capital Subsidy",
+                "eligibility": "First Generation Entrepreneurs",
+                "status": "Active"
+            },
+            {
+                "scheme": "UYEGP",
+                "benefit": "Margin Money Subsidy",
+                "eligibility": "Unemployed Youth",
+                "status": "Active"
+            }
+        ],
+        "subheadings": [
+            {
+                "id": "overview",
+                "title": "Overview",
+                "content": "Fostering entrepreneurship and industrial growth through capital subsidies and simplified regulations."
+            }
+        ]
+    },
+    {
+        "id": "differently-abled",
+        "title": "Differently Abled Welfare",
+        "description": "Maintenance allowance, motorized vehicles, and specialized schooling.",
+        "icon": "Accessibility",
+        "tableData": [
+            {
+                "scheme": "Maintenance Allowance",
+                "benefit": "Rs. 2000/month",
+                "eligibility": "Differently Abled Persons",
+                "status": "Active"
+            },
+            {
+                "scheme": "Retro-fitted Vehicles",
+                "benefit": "Free Motorized Scooter",
+                "eligibility": "Locomotor Disability",
+                "status": "Active"
+            }
+        ],
+        "subheadings": [
+            {
+                "id": "overview",
+                "title": "Overview",
+                "content": "Ensuring an accessible and dignified life for all differently-abled citizens through tailored support."
+            }
+        ]
+    },
+    {
+        "id": "social-security",
+        "title": "Social Security Pensions",
+        "description": "Pensions for widows, destitute, unmarried women, and seniors.",
+        "icon": "Shield",
+        "tableData": [
+            {
+                "scheme": "OAP (Old Age Pension)",
+                "benefit": "Rs. 1200/month",
+                "eligibility": "Seniors > 60 yrs, BPL",
+                "status": "Active"
+            },
+            {
+                "scheme": "Destitute Widow Pension",
+                "benefit": "Rs. 1200/month",
+                "eligibility": "Widows with no income source",
+                "status": "Active"
+            }
+        ],
+        "subheadings": [
+            {
+                "id": "overview",
+                "title": "Overview",
+                "content": "Providing a social safety net to the most vulnerable sections of society via direct monthly bank transfers."
+            }
+        ]
+    },
+    {
+        "id": "animal-husbandry",
+        "title": "Animal Husbandry",
+        "description": "Free milch cows, goats, and poultry for rural livelihood.",
+        "icon": "Milk",
+        "tableData": [
+            {
+                "scheme": "Free Milch Cows",
+                "benefit": "1 Cow per family",
+                "eligibility": "Women in Rural Areas",
+                "status": "Active"
+            },
+            {
+                "scheme": "Free Goats/Sheep",
+                "benefit": "4 Goats/Sheep",
+                "eligibility": "Landless poor",
+                "status": "Active"
+            }
+        ],
+        "subheadings": [
+            {
+                "id": "overview",
+                "title": "Overview",
+                "content": "Boosting rural economy and nutritional self-sufficiency by distributing livestock to landless families."
+            }
+        ]
+    },
+    {
+        "id": "fisheries",
+        "title": "Fisheries Development",
+        "description": "Fishing ban relief, diesel subsidies, and boat modernization.",
+        "icon": "Ship",
+        "tableData": [
+            {
+                "scheme": "Fishing Ban Relief",
+                "benefit": "Rs. 6000",
+                "eligibility": "Marine Fishermen during ban period",
+                "status": "Seasonal"
+            },
+            {
+                "scheme": "Diesel Subsidy",
+                "benefit": "Tax-free diesel",
+                "eligibility": "Registered mechanised boats",
+                "status": "Active"
+            }
+        ],
+        "subheadings": [
+            {
+                "id": "overview",
+                "title": "Overview",
+                "content": "Protecting the livelihood of coastal communities and modernizing the state fisheries sector."
+            }
+        ]
+    },
+    {
+        "id": "tribal",
+        "title": "Tribal Welfare",
+        "description": "Forest rights, residential schools, and economic development.",
+        "icon": "Trees",
+        "tableData": [
+            {
+                "scheme": "Ekalavya Model Schools",
+                "benefit": "Free Residential Ed",
+                "eligibility": "ST Students",
+                "status": "Active"
+            },
+            {
+                "scheme": "Forest Rights Titles",
+                "benefit": "Land Titles",
+                "eligibility": "Forest Dwelling STs",
+                "status": "Active"
+            }
+        ],
+        "subheadings": [
+            {
+                "id": "overview",
+                "title": "Overview",
+                "content": "Preserving tribal culture while integrating ST communities into the mainstream economy via education and land rights."
+            }
+        ]
+    },
+    {
+        "id": "minorities",
+        "title": "Minorities Welfare",
+        "description": "Educational scholarships, coaching, and Ulema pension.",
+        "icon": "Globe",
+        "tableData": [
+            {
+                "scheme": "Pre/Post Matric Scholarship",
+                "benefit": "Tuition Fee + Maintenance",
+                "eligibility": "Minority Students",
+                "status": "Active"
+            },
+            {
+                "scheme": "Ulema Pension",
+                "benefit": "Rs. 3000/month",
+                "eligibility": "Destitute Ulemas",
+                "status": "Active"
+            }
+        ],
+        "subheadings": [
+            {
+                "id": "overview",
+                "title": "Overview",
+                "content": "Ensuring equitable socioeconomic development for religious and linguistic minorities in the state."
+            }
+        ]
+    },
+    {
+        "id": "rural-dev",
+        "title": "Rural Development",
+        "description": "Village roads, MGNREGA employment, and clean drinking water.",
+        "icon": "Map",
+        "tableData": [
+            {
+                "scheme": "MGNREGA",
+                "benefit": "100 Days Guaranteed Work",
+                "eligibility": "Rural Job Card Holders",
+                "status": "Active"
+            },
+            {
+                "scheme": "Jal Jeevan Mission",
+                "benefit": "Piped Water Connection",
+                "eligibility": "All Rural Households",
+                "status": "Active"
+            }
+        ],
+        "subheadings": [
+            {
+                "id": "overview",
+                "title": "Overview",
+                "content": "Building robust rural infrastructure and providing guaranteed wage employment to prevent urban migration."
+            }
+        ]
+    },
+    {
+        "id": "urban-dev",
+        "title": "Urban Development",
+        "description": "Smart cities, metro expansion, and urban sanitation.",
+        "icon": "Building",
+        "tableData": [
+            {
+                "scheme": "Smart Cities Mission",
+                "benefit": "Tech-driven City Infra",
+                "eligibility": "Selected Tier 1/2 Cities",
+                "status": "Active"
+            },
+            {
+                "scheme": "AMRUT",
+                "benefit": "Sewage & Water Infra",
+                "eligibility": "Urban Local Bodies",
+                "status": "Active"
+            }
+        ],
+        "subheadings": [
+            {
+                "id": "overview",
+                "title": "Overview",
+                "content": "Transforming urban spaces into sustainable, citizen-friendly smart cities with world-class amenities."
+            }
+        ]
+    },
+    {
+        "id": "transport",
+        "title": "Public Transport",
+        "description": "Electric buses, free travel schemes, and road safety protocols.",
+        "icon": "Bus",
+        "tableData": [
+            {
+                "scheme": "Free Travel for Women",
+                "benefit": "Zero Ticket Fare",
+                "eligibility": "Women, Transgenders, Differently Abled",
+                "status": "Active"
+            },
+            {
+                "scheme": "Innuyir Kappom",
+                "benefit": "Free Emergency Care (48hrs)",
+                "eligibility": "Accident Victims",
+                "status": "Active"
+            }
+        ],
+        "subheadings": [
+            {
+                "id": "overview",
+                "title": "Overview",
+                "content": "Providing safe, accessible, and eco-friendly public transportation, alongside life-saving highway trauma care."
+            }
+        ]
+    },
+    {
+        "id": "energy",
+        "title": "Energy & Power",
+        "description": "Free electricity for farmers, solar subsidies, and green energy.",
+        "icon": "Zap",
+        "tableData": [
+            {
+                "scheme": "Free Farm Power",
+                "benefit": "100% Free Electricity",
+                "eligibility": "Agricultural Pumpset Owners",
+                "status": "Active"
+            },
+            {
+                "scheme": "Rooftop Solar Subsidy",
+                "benefit": "Up to 40% Subsidy",
+                "eligibility": "Domestic Consumers",
+                "status": "Active"
+            }
+        ],
+        "subheadings": [
+            {
+                "id": "overview",
+                "title": "Overview",
+                "content": "Meeting the state's power demands through renewable energy adoption while subsidizing critical sectors like farming."
+            }
+        ]
+    },
+    {
+        "id": "water",
+        "title": "Water Resources",
+        "description": "Dam rehabilitation, canal modernization, and rainwater harvesting.",
+        "icon": "Droplets",
+        "tableData": [
+            {
+                "scheme": "Kudimaramathu",
+                "benefit": "Pond/Lake Desilting",
+                "eligibility": "Farmers' Associations",
+                "status": "Active"
+            },
+            {
+                "scheme": "Dam Rehabilitation",
+                "benefit": "Structural Strengthening",
+                "eligibility": "Major Dams",
+                "status": "Active"
+            }
+        ],
+        "subheadings": [
+            {
+                "id": "overview",
+                "title": "Overview",
+                "content": "Preserving water bodies through community participation and strengthening macro irrigation networks."
+            }
+        ]
+    },
+    {
+        "id": "environment",
+        "title": "Environment & Forests",
+        "description": "Green covers, ban on plastics, and wildlife conservation.",
+        "icon": "Leaf",
+        "tableData": [
+            {
+                "scheme": "Green Tamil Nadu Mission",
+                "benefit": "Increasing Forest Cover",
+                "eligibility": "Statewide",
+                "status": "Active"
+            },
+            {
+                "scheme": "Meendum Manjapai",
+                "benefit": "Cloth Bag promotion",
+                "eligibility": "Citizens & Vendors",
+                "status": "Active"
+            }
+        ],
+        "subheadings": [
+            {
+                "id": "overview",
+                "title": "Overview",
+                "content": "Combatting climate change by expanding green cover and eliminating single-use plastics."
+            }
+        ]
+    },
+    {
+        "id": "it",
+        "title": "Information Technology",
+        "description": "E-governance, broadband connectivity, and IT parks.",
+        "icon": "Laptop",
+        "tableData": [
+            {
+                "scheme": "BharatNet",
+                "benefit": "Optic Fiber to Villages",
+                "eligibility": "Village Panchayats",
+                "status": "Implementation"
+            },
+            {
+                "scheme": "E-Sevai Centers",
+                "benefit": "Doorstep Govt Services",
+                "eligibility": "All Citizens",
+                "status": "Active"
+            }
+        ],
+        "subheadings": [
+            {
+                "id": "overview",
+                "title": "Overview",
+                "content": "Digitalizing governance to ensure transparency, speed, and eliminating the need to physically visit government offices."
+            }
+        ]
+    },
+    {
+        "id": "labour",
+        "title": "Labour Welfare",
+        "description": "Unorganized sector boards, minimum wages, and workplace safety.",
+        "icon": "HardHat",
+        "tableData": [
+            {
+                "scheme": "Construction Workers Board",
+                "benefit": "Accident Cover, Ed Grants",
+                "eligibility": "Registered Construction Workers",
+                "status": "Active"
+            },
+            {
+                "scheme": "Amma Canteens",
+                "benefit": "Highly Subsidized Food",
+                "eligibility": "Urban Poor / Daily wagers",
+                "status": "Active"
+            }
+        ],
+        "subheadings": [
+            {
+                "id": "overview",
+                "title": "Overview",
+                "content": "Protecting the rights, health, and dignity of laborers, particularly in the unorganized sectors."
+            }
+        ]
+    }
+]

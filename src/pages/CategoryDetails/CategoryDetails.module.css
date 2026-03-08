@@ -1,0 +1,311 @@
+.detailsPage {
+    min-height: 100vh;
+    padding-bottom: 5rem;
+    background-color: var(--color-bg);
+}
+
+.pageHeader {
+    padding: 8rem 0 4rem;
+    background: linear-gradient(135deg, var(--color-bg-alt), #f8fafc);
+    border-bottom: 1px solid var(--color-border);
+    margin-bottom: 3rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.pageHeader::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(238, 203, 136, 0.15) 0%, transparent 70%);
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.backLink {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--color-text-light);
+    font-weight: 500;
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 1;
+    transition: color var(--transition-fast);
+}
+
+.backLink:hover {
+    color: var(--color-primary-dark);
+}
+
+.title {
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
+    color: var(--color-text-dark);
+    font-weight: 800;
+    line-height: 1.2;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 1rem;
+    letter-spacing: -1px;
+}
+
+.description {
+    font-size: 1.2rem;
+    color: var(--color-text-light);
+    line-height: 1.7;
+    max-width: 800px;
+    position: relative;
+    z-index: 1;
+}
+
+.contentContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.sectionTitle {
+    font-size: 1.5rem;
+    color: var(--color-text-dark);
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid rgba(238, 203, 136, 0.3);
+    display: inline-block;
+}
+
+/* Data Table Styles */
+.tableResponsive {
+    width: 100%;
+    overflow-x: auto;
+    background: white;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--color-border);
+}
+
+.dataTable {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px;
+}
+
+.dataTable th,
+.dataTable td {
+    padding: 1.25rem 1.5rem;
+    text-align: left;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.dataTable th {
+    background: #f8fafc;
+    color: var(--color-text-dark);
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.dataTable tr {
+    transition: background 0.2s ease;
+}
+
+.dataTable tbody tr:hover {
+    background: #f1f5f9;
+}
+
+.highlightText {
+    font-weight: 700;
+    color: #059669;
+    /* emerald green */
+}
+
+/* Status Badges */
+.statusBadge {
+    display: inline-block;
+    padding: 0.35rem 0.85rem;
+    border-radius: 2rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.statusBadge.active {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.statusBadge.closingsoon {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.statusBadge.waitlisted {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.defaultStatus {
+    background: #f1f5f9;
+    color: #475569;
+}
+
+/* Accordion Layout (Mobile) */
+.accordionContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.accordionItem {
+    background: white;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+}
+
+.accordionHeader {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 1.5rem;
+    background: transparent;
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--color-text-dark);
+    transition: background var(--transition-fast);
+}
+
+.accordionHeader.active {
+    background: #f8fafc;
+    border-bottom: 1px solid var(--color-border);
+    color: var(--color-primary-dark);
+}
+
+.accordionContentWrapper {
+    overflow: hidden;
+}
+
+.accordionContent {
+    padding: 1.5rem;
+    background: white;
+}
+
+/* Desktop Split Layout */
+.splitLayout {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.sidebarNav {
+    background: white;
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-glass);
+    border: 1px solid var(--color-border);
+    position: sticky;
+    top: 6rem;
+}
+
+.sidebarTitle {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    color: var(--color-text-dark);
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.navList {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.navItem {
+    width: 100%;
+    text-align: left;
+    padding: 1rem 1.25rem;
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: var(--radius-md);
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: var(--color-text-light);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.2s ease;
+}
+
+.navItem:hover {
+    background: #f8fafc;
+    color: var(--color-primary-dark);
+}
+
+.activeTab {
+    background: var(--color-primary-light);
+    color: var(--color-primary-dark);
+    border-color: rgba(238, 203, 136, 0.5);
+    font-weight: 700;
+}
+
+.navIcon {
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.2s ease;
+}
+
+.activeTab .navIcon,
+.navItem:hover .navIcon {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.mainContent {
+    background: white;
+    padding: 3rem;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-glass);
+    border: 1px solid var(--color-border);
+    min-height: 400px;
+}
+
+.tabContent h2 {
+    font-size: 2rem;
+    color: var(--color-text-dark);
+    margin-bottom: 1.5rem;
+    font-weight: 800;
+}
+
+/* HTML Content Styling */
+.htmlContent p,
+.accordionContent p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--color-text-light);
+    margin-bottom: 1.5rem;
+}
+
+.htmlContent ul,
+.accordionContent ul,
+.htmlContent ol,
+.accordionContent ol {
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+    color: var(--color-text-light);
+    line-height: 1.8;
+}
+
+.htmlContent li,
+.accordionContent li {
+    margin-bottom: 0.5rem;
+}

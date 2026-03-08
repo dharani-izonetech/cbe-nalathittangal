@@ -1,0 +1,129 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: all var(--transition-normal);
+    padding: 1.5rem 0;
+    background-color: transparent;
+}
+
+.scrolled {
+    padding: 1rem 0;
+    background-color: var(--color-glass);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow: var(--shadow-md);
+    border-bottom: 1px solid var(--color-glass-border);
+}
+
+.navContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.logoIcon {
+    color: var(--color-primary);
+}
+
+.logoText {
+    display: flex;
+    flex-direction: column;
+}
+
+.titlePrimary {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.25rem;
+    line-height: 1;
+    color: var(--color-text-dark);
+}
+
+.titleSecondary {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--color-text-light);
+}
+
+.desktopMenu {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .desktopMenu {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+    }
+}
+
+.navLink {
+    position: relative;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color var(--transition-fast);
+}
+
+.navLink:hover {
+    color: var(--color-primary-dark);
+}
+
+.navLink::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: var(--color-primary);
+    transition: width var(--transition-normal);
+}
+
+.navLink:hover::after,
+.active::after {
+    width: 100%;
+}
+
+.active {
+    color: var(--color-primary-dark);
+}
+
+.mobileToggle {
+    display: block;
+}
+
+@media (min-width: 768px) {
+    .mobileToggle {
+        display: none;
+    }
+}
+
+.mobileMenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--color-bg-alt);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    box-shadow: var(--shadow-lg);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.mobileNavLink {
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--color-border);
+}

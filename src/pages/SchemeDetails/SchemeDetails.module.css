@@ -1,0 +1,372 @@
+.detailsPage {
+    min-height: 100vh;
+    padding-bottom: 5rem;
+    background-color: var(--color-bg);
+}
+
+.pageHeader {
+    padding: 8rem 0 4rem;
+    background: var(--color-bg-alt);
+    border-bottom: 1px solid var(--color-border);
+    margin-bottom: 3rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.pageHeader::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(238, 203, 136, 0.2) 0%, transparent 60%);
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.backLink {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--color-text-light);
+    font-weight: 500;
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 1;
+    transition: color var(--transition-fast);
+}
+
+.backLink:hover {
+    color: var(--color-primary-dark);
+}
+
+.departmentBadge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--color-primary-light);
+    color: var(--color-primary-dark);
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.title {
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    color: var(--color-text-dark);
+    font-weight: 800;
+    line-height: 1.3;
+    position: relative;
+    z-index: 1;
+}
+
+.contentContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+@media (min-width: 992px) {
+    .contentContainer {
+        grid-template-columns: 2fr 1fr;
+    }
+}
+
+.overviewCard {
+    padding: 2.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.overviewCard h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--color-text-dark);
+}
+
+.description {
+    font-size: 1.15rem;
+    color: var(--color-text-light);
+    line-height: 1.8;
+}
+
+/* SECTION CARDS */
+.sectionCard {
+    background: var(--color-bg-alt);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    padding: 2.5rem;
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.sectionCard:hover {
+    box-shadow: var(--shadow-lg), 0 0 15px rgba(238, 203, 136, 0.15);
+    border-color: rgba(238, 203, 136, 0.4);
+}
+
+.sectionHeader {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.sectionHeader h2 {
+    font-size: 1.4rem;
+    color: var(--color-text-dark);
+    font-weight: 700;
+}
+
+.iconBox {
+    background: var(--color-bg);
+    padding: 0.75rem;
+    border-radius: var(--radius-md);
+    color: var(--color-primary-dark);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* BENEFITS GRID */
+.benefitsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.benefitBox {
+    background: var(--color-bg);
+    padding: 1.5rem;
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.benefitBox:hover {
+    background: var(--color-bg-alt);
+    border-color: var(--color-primary-light);
+    box-shadow: var(--shadow-sm);
+    transform: translateY(-3px);
+}
+
+.benefitIcon {
+    color: #10b981;
+    flex-shrink: 0;
+}
+
+.benefitBox p {
+    color: var(--color-text-dark);
+    font-size: 1.05rem;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+/* ELIGIBILITY LIST */
+.eligibilityList {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.eligibilityList li {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.1rem;
+    color: var(--color-text);
+    background: var(--color-bg);
+    padding: 1rem 1.5rem;
+    border-radius: var(--radius-md);
+    transition: transform 0.2s ease;
+}
+
+.eligibilityList li:hover {
+    transform: translateX(5px);
+}
+
+.checkCircle {
+    width: 28px;
+    height: 28px;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+/* DOCUMENT GRID */
+.documentGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.25rem;
+}
+
+.documentItem {
+    border: 1px dashed var(--color-border);
+    padding: 1.5rem;
+    border-radius: var(--radius-md);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+    background: var(--color-bg);
+    transition: all 0.3s ease;
+}
+
+.documentItem:hover {
+    border-style: solid;
+    border-color: var(--color-primary-dark);
+    background: var(--color-primary-light);
+}
+
+.docIcon {
+    color: var(--color-text-light);
+    transition: color 0.3s ease;
+}
+
+.documentItem:hover .docIcon {
+    color: var(--color-primary-dark);
+}
+
+/* PROCESS STEPS */
+.processSteps {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    position: relative;
+    padding-left: 20px;
+}
+
+.processSteps::before {
+    content: '';
+    position: absolute;
+    left: 4px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--color-border);
+}
+
+.step {
+    position: relative;
+    padding-left: 2rem;
+}
+
+.stepNumber {
+    position: absolute;
+    left: -20px;
+    top: 0;
+    width: 32px;
+    height: 32px;
+    background: var(--color-bg-alt);
+    border: 2px solid var(--color-primary-dark);
+    color: var(--color-primary-dark);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.9rem;
+    z-index: 1;
+}
+
+.stepText {
+    font-size: 1.1rem;
+    color: var(--color-text-dark);
+    padding-top: 4px;
+    line-height: 1.6;
+}
+
+/* SIDEBAR APPLY CARD */
+.applyCard {
+    background: var(--color-text-dark);
+    border-radius: var(--radius-xl);
+    padding: 2.5rem;
+    color: white;
+    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.4);
+    position: sticky;
+    top: 6rem;
+    overflow: hidden;
+}
+
+.sidebarBlob {
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(238, 203, 136, 0.15) 0%, transparent 60%);
+    animation: rotateGlow 15s linear infinite;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.sidebarContent {
+    position: relative;
+    z-index: 1;
+}
+
+.applyCard h3 {
+    color: white;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.applyCard p {
+    color: #cbd5e1;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    font-size: 1.05rem;
+}
+
+.applyBtn {
+    width: 100%;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+    color: var(--color-text-dark);
+    font-size: 1.15rem;
+    padding: 1.25rem;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 10px 20px rgba(238, 203, 136, 0.3);
+    border: none;
+}
+
+.applyBtn:hover {
+    box-shadow: 0 15px 30px rgba(238, 203, 136, 0.5);
+    transform: translateY(-3px);
+}
+
+.contactInfo {
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.contactInfo h4 {
+    font-size: 1rem;
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.contactInfo p {
+    margin-bottom: 0;
+    font-weight: 600;
+    color: white;
+}

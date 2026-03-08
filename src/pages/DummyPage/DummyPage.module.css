@@ -1,0 +1,36 @@
+.dummyPage {
+    min-height: calc(100vh - 400px);
+    padding: 10rem 0 5rem;
+    background-color: var(--color-bg);
+}
+
+.contentCard {
+    background-color: var(--color-bg-alt);
+    padding: 4rem;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    text-align: center;
+    border: 1px solid var(--color-border);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contentCard h1 {
+    font-size: 2.5rem;
+    color: var(--color-text-dark);
+    margin-bottom: 1.5rem;
+}
+
+.contentCard p {
+    font-size: 1.1rem;
+    color: var(--color-text-light);
+    line-height: 1.7;
+    margin-bottom: 3rem;
+}
+
+.placeholderBox {
+    padding: 2rem;
+    background: var(--color-bg);
+    border-radius: var(--radius-md);
+    text-align: left;
+}

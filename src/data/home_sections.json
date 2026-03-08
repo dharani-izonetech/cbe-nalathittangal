@@ -1,0 +1,50 @@
+[
+    {
+        "id": "public-services",
+        "title": "Essential Public Services",
+        "subheadings": [
+            {
+                "id": "certificates",
+                "title": "Revenue Certificates",
+                "content": "Learn how to apply for Community, Nativity, and Income certificates through the e-Sevai portals.\nApply online or at nearest CSC\nProcessing time: 15 days"
+            },
+            {
+                "id": "licensing",
+                "title": "Driving & Transport",
+                "content": "Guidelines for obtaining Learner's License, Permanent Driving License, and vehicle registrations."
+            }
+        ]
+    },
+    {
+        "id": "civic-amenities",
+        "title": "Civic Amenities & Infrastructure",
+        "subheadings": [
+            {
+                "id": "water",
+                "title": "Water Connections",
+                "content": "Procedures to apply for new domestic and commercial drinking water and sewage connections."
+            },
+            {
+                "id": "electricity",
+                "title": "Power Supply",
+                "content": "How to register for a new TANGEDCO electricity connection or report power outages in your area."
+            }
+        ]
+    },
+    {
+        "id": "emergency-response",
+        "title": "Emergency & Helpline",
+        "subheadings": [
+            {
+                "id": "police",
+                "title": "Police & Security",
+                "content": "Contact numbers for local police stations, women's helpline (1091), and cyber crime reporting."
+            },
+            {
+                "id": "medical",
+                "title": "Ambulance Services",
+                "content": "108 Ambulance service coverage, emergency trauma care centers, and 24x7 blood banks."
+            }
+        ]
+    }
+]
