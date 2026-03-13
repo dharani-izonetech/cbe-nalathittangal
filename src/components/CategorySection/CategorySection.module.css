@@ -85,6 +85,7 @@
     grid-template-columns: 300px 1fr;
     gap: 3rem;
     align-items: start;
+    min-width: 0;
 }
 
 .sidebarNav {
@@ -136,7 +137,7 @@
 .activeTab {
     background: var(--color-primary-light);
     color: var(--color-primary-dark);
-    border-color: rgba(238, 203, 136, 0.5);
+    border-color: rgba(var(--color-primary-rgb), 0.35);
     font-weight: 700;
 }
 
@@ -159,6 +160,7 @@
     box-shadow: var(--shadow-glass);
     border: 1px solid var(--color-border);
     min-height: 400px;
+    min-width: 0;
 }
 
 .tabContent h2 {
@@ -190,4 +192,132 @@
 .htmlContent li,
 .accordionContent li {
     margin-bottom: 0.5rem;
+}
+
+/* Data Table Styles */
+.tableResponsive {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    background: white;
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--color-border);
+    margin: 1.5rem 0;
+    display: block; /* Added to enforce block-level overflow handling */
+}
+
+.dataTable {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 400px;
+    table-layout: fixed; /* Added to enforce column constraints */
+    border-style: hidden;
+}
+
+.dataTable th,
+.dataTable td {
+    padding: 1rem 1.25rem;
+    text-align: center;
+    border: 1px solid var(--color-border);
+    word-break: break-word; /* Prevent long unbroken strings from stretching cells */
+}
+
+.dataTable th {
+    background: #f8fafc;
+    color: var(--color-text-dark);
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.dataTable tr {
+    transition: background 0.2s ease;
+}
+
+.dataTable tbody tr:hover {
+    background: #f1f5f9;
+}
+
+.highlightText {
+    font-weight: 700;
+    color: var(--color-primary-dark);
+}
+
+.totalRow td {
+    background: var(--color-primary-light);
+    font-weight: 700;
+    color: var(--color-primary-dark);
+    border-top: 2px solid var(--color-primary-dark);
+}
+
+/* ===== RESPONSIVE ===== */
+
+/* Tablet: 768px – 1023px */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .splitLayout {
+        grid-template-columns: 220px 1fr;
+        gap: 1.5rem;
+    }
+
+    .sidebarNav {
+        padding: 1.25rem;
+        top: 5rem;
+    }
+
+    .navItem {
+        padding: 0.75rem 1rem;
+        font-size: 0.95rem;
+    }
+
+    .mainContent {
+        padding: 2rem 1.5rem;
+    }
+
+    .tabContent h2 {
+        font-size: 1.6rem;
+    }
+}
+
+/* Mobile: below 768px — accordion is used, but keep padding tidy */
+@media (max-width: 767px) {
+    .categorySection {
+        padding: 2.5rem 0;
+    }
+
+    .sectionHeading {
+        font-size: 1.6rem;
+    }
+
+    .accordionHeader {
+        font-size: 1rem;
+        padding: 1rem 1.25rem;
+    }
+
+    .accordionContent {
+        padding: 1rem;
+    }
+
+    .tabContent h2 {
+        font-size: 1.4rem;
+    }
+
+    .dataTable th,
+    .dataTable td {
+        padding: 0.75rem 0.9rem;
+        font-size: 0.9rem;
+    }
+
+    /* Standard table layout with horizontal scroll for mobile */
+    .tableResponsive {
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        margin: 1rem 0;
+    }
+
+    .dataTable {
+        min-width: 600px;
+    }
 }

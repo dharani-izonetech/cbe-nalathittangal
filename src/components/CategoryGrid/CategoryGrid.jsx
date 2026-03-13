@@ -1,9 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
-import * as Icons from 'lucide-react';
 import categoriesData from '../../data/categories.json';
 import styles from './CategoryGrid.module.css';
+import { useTranslation } from '../../i18n/LanguageContext';
 
 const containerVariants = {
     hidden: { opacity: 0 },
@@ -14,12 +14,32 @@ const containerVariants = {
 };
 
 const cardVariants = {
-    hidden: { opacity: 0, x: -20 },
-    visible: { opacity: 1, x: 0, transition: { duration: 0.4 } }
+    hidden: { opacity: 0, y: 16 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.4 } }
 };
+
+const cardPalettes = [
+    '#1f5c62',
+    '#97234f',
+    '#6c6b3d',
+    '#c88a0c',
+    '#7a4b09',
+    '#263b7a',
+    '#5b2c86',
+    '#6a4b0a',
+    '#6a7f1b',
+];
+
+const extraCategoryBoxes = [
+    'தமிழ்ப் புதல்வன்',
+    'முதலமைச்சர் கோப்பை',
+    'முதல்வரின் முகவரி',
+];
 
 const CategoryGrid = () => {
     const navigate = useNavigate();
+    const { t, lang } = useTranslation();
+    const defaultImage = '/category-placeholder.svg';
 
     const createRipple = (event, id) => {
         const button = event.currentTarget;
@@ -45,10 +65,15 @@ const CategoryGrid = () => {
     };
 
     return (
-        <section className="section">
+        <section id="schemes-section" className={`section ${styles.categorySection}`}>
             <div className={`container ${styles.gridContainer}`}>
-                <h2 className="section-title">Explore by Category</h2>
-                <p className="section-subtitle">Select a sector to view active departments, data, and government welfare initiatives.</p>
+                <h2
+                    className={`section-title ${styles.sectionTitleTa}`}
+                    lang={lang}
+                >
+                    {t('categoryGrid.title')}
+                </h2>
+                <p className={styles.sectionSubtitle}>{t('categoryGrid.subtitle')}</p>
 
                 <motion.div
                     className={styles.grid}
@@ -57,23 +82,34 @@ const CategoryGrid = () => {
                     whileInView="visible"
                     viewport={{ once: true, margin: "-50px" }}
                 >
-                    {categoriesData.map((category) => {
-                        const IconComponent = Icons[category.icon] || Icons.HelpCircle;
+                    {categoriesData.map((category, index) => {
+                        const cardBg = category.cardBg || cardPalettes[index % cardPalettes.length];
+                        const cardImage = category.cardImage || defaultImage;
+                        const cardStat = category.cardStat || category.cardSubtitle || category.description;
 
                         return (
                             <motion.div
                                 key={category.id}
                                 className={styles.card}
+                                style={{ backgroundColor: cardBg }}
                                 variants={cardVariants}
                                 whileHover="hover"
                                 onClick={(e) => createRipple(e, category.id)}
                             >
-                                <div className={styles.iconWrapper}>
-                                    <IconComponent size={20} className={styles.icon} />
+                                <div className={styles.cardContent}>
+                                    <h3 className={styles.title}>{category.title}</h3>
+                                    {cardStat && <p className={styles.cardStat}>{cardStat}</p>}
                                 </div>
-
-                                <h3 className={styles.title}>{category.title}</h3>
-                                <Icons.ChevronRight size={18} className={styles.arrowIcon} />
+                                <div className={styles.cardImageWrap}>
+                                    <img
+                                        src={cardImage}
+                                        alt=""
+                                        loading="lazy"
+                                        onError={(e) => {
+                                            e.currentTarget.src = defaultImage;
+                                        }}
+                                    />
+                                </div>
                             </motion.div>
                         );
                     })}

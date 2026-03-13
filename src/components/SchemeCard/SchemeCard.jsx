@@ -28,7 +28,7 @@ const SchemeCard = ({ scheme }) => {
 
                 <div className={styles.eligibilityBlock}>
                     <h4 className={styles.eligibilityTitle}>
-                        <Users size={16} /> Key Eligibility
+                        <Users size={16} /> முக்கிய தகுதி
                     </h4>
                     <p className={styles.eligibilityText}>{scheme.eligibilitySummary}</p>
                 </div>
@@ -36,7 +36,7 @@ const SchemeCard = ({ scheme }) => {
 
             <div className={styles.cardFooter}>
                 <Link to={`/schemes/${scheme.id}`} className={styles.viewDetailsBtn}>
-                    View Details
+                    விவரங்களை காண்க
                     <motion.span
                         variants={{
                             hover: { x: 5, transition: { type: "spring", stiffness: 300 } }

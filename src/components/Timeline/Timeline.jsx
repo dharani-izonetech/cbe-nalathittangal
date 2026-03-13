@@ -76,7 +76,7 @@ const Timeline = () => {
     return (
         <section className="section" ref={containerRef}>
             <div className="container">
-                <h2 className="section-title">Initiatives Timeline</h2>
+                <h2 className="section-title">கோயம்புத்தூர் மாவட்ட திட்டங்கள்</h2>
 
                 <div className={styles.timelineWrapper}>
                     <motion.div

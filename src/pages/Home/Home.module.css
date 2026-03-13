@@ -1,410 +1,92 @@
-.home {
-    min-height: 100vh;
-}
 
 .heroSection {
     position: relative;
-    min-height: 100vh;
+    width: 100%;
+    height: 100vh;
+    height: 100svh;
     display: flex;
+    justify-content: center;
     align-items: center;
     overflow: hidden;
-    padding-top: 6rem;
-    background-color: transparent;
+    padding: 0;
+    margin: 0;
+    background: #000; /* Dark fallback for video */
+    color: #fff;
+}
+
+@media (max-width: 1024px) {
+    .heroSection {
+        height: 100svh;
+        min-height: 100svh;
+        display: flex;
+        padding: 0;
+    }
+}
+
+@media (max-width: 767px) {
+    .heroSection {
+        /* Ensure no extra padding or margin on small devices */
+        height: 100svh;
+        min-height: -webkit-fill-available;
+    }
+}
+
+.videoBackground {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    /* Above heroSection background, below heroContainer */
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.videoBackground video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    object-position: center 70%; /* Shift up to center the bottom-aligned text */
+}
+
+@media (max-width: 1024px) {
+    .videoBackground {
+        position: absolute;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .videoBackground video {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        background: #000;
+        object-position: center 70%; /* Consistent centering for mobile */
+    }
+}
+
+@media (max-width: 767px) {
+    .videoBackground video {
+        /* On very small screens, slight zoom can help keep centered text legible */
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+/* Clear overlay to ensure video is fully visible */
+.videoBackground::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.05);
+    /* Extremely subtle overlay */
+    z-index: 2;
 }
 
 .heroBackground {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 120%;
-    z-index: -2;
-    overflow: hidden;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0) 0%, rgba(238, 203, 136, 0.05) 100%);
-}
-
-.animatedGradient {
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: conic-gradient(from 180deg at 50% 50%, rgba(238, 203, 136, 0.1) 0deg, rgba(255, 255, 255, 0) 180deg, rgba(238, 203, 136, 0.1) 360deg);
-    animation: spinSlow 30s linear infinite;
-    z-index: -1;
-}
-
-@keyframes spinSlow {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
-.abstractBlob1 {
-    position: absolute;
-    top: -10%;
-    left: 10%;
-    width: 50vw;
-    height: 50vw;
-    background: radial-gradient(circle, rgba(238, 203, 136, 0.2) 0%, transparent 60%);
-    filter: blur(80px);
-    animation: blobFloat 20s infinite alternate ease-in-out;
-}
-
-.abstractBlob2 {
-    position: absolute;
-    bottom: -10%;
-    right: 10%;
-    width: 60vw;
-    height: 60vw;
-    background: radial-gradient(circle, rgba(148, 163, 184, 0.15) 0%, transparent 60%);
-    filter: blur(80px);
-    animation: blobFloat 25s infinite alternate ease-in-out reverse;
-}
-
-.particlesContainer {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 1;
-}
-
-.particle {
-    position: absolute;
-    width: 4px;
-    height: 4px;
-    background: rgba(238, 203, 136, 0.6);
-    border-radius: 50%;
-    box-shadow: 0 0 10px rgba(238, 203, 136, 0.8);
-    animation: particleDrift linear infinite;
-}
-
-@keyframes particleDrift {
-    0% {
-        transform: translateY(0) scale(1);
-        opacity: 0;
-    }
-
-    50% {
-        opacity: 1;
-    }
-
-    100% {
-        transform: translateY(-200px) scale(0);
-        opacity: 0;
-    }
-}
-
-.parallaxGrid {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image:
-        linear-gradient(rgba(238, 203, 136, 0.05) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(238, 203, 136, 0.05) 1px, transparent 1px);
-    background-size: 80px 80px;
-    mask-image: radial-gradient(circle at center, black 20%, transparent 80%);
-    -webkit-mask-image: radial-gradient(circle at center, black 20%, transparent 80%);
-    z-index: -1;
-}
-
-.heroContainer {
-    position: relative;
-    z-index: 10;
-    height: 100%;
-}
-
-.heroLayout {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 4rem;
-}
-
-@media (min-width: 1024px) {
-    .heroLayout {
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-    }
-}
-
-.heroContent {
-    flex: 1;
-    max-width: 650px;
-    text-align: left;
-}
-
-.badgeWrapper {
-    margin-bottom: 2rem;
-}
-
-.premiumBadge {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.5rem 1.25rem;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.4));
-    border: 1px solid rgba(255, 255, 255, 0.8);
-    box-shadow: var(--shadow-sm), inset 0 0 10px rgba(255, 255, 255, 0.5);
-    backdrop-filter: blur(10px);
-    color: var(--color-primary-dark);
-    border-radius: 2rem;
-    font-weight: 700;
-    font-size: 0.85rem;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-}
-
-.badgeIcon {
-    color: var(--color-primary-dark);
-}
-
-.title {
-    font-size: clamp(3rem, 5vw, 4.5rem);
-    font-weight: 800;
-    color: var(--color-text-dark);
-    margin-bottom: 2rem;
-    line-height: 1.1;
-    letter-spacing: -1px;
-}
-
-.highlightGlow {
-    background: linear-gradient(135deg, var(--color-primary-dark), #f59e0b);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    display: inline-block;
-    position: relative;
-}
-
-.subtitle {
-    font-size: 1.25rem;
-    color: var(--color-text-light);
-    margin-bottom: 3rem;
-    max-width: 580px;
-    line-height: 1.7;
-}
-
-.ctaGroup {
-    display: flex;
-    gap: 1.5rem;
-    align-items: center;
-    position: relative;
-    z-index: 20;
-}
-
-.heroBtn {
-    padding: 1rem 2.5rem;
-    font-size: 1.15rem;
-    border-radius: 3rem;
-    box-shadow: 0 10px 30px rgba(238, 203, 136, 0.4);
-    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
-    color: var(--color-text-dark);
-    display: inline-flex;
-    align-items: center;
-    gap: 0.75rem;
-    position: relative;
-    overflow: hidden;
-}
-
-.heroBtn::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-    transition: left 0.5s ease;
-}
-
-.heroBtn:hover {
-    transform: translateY(-3px) scale(1.02);
-    box-shadow: 0 15px 35px rgba(238, 203, 136, 0.6), 0 0 20px rgba(238, 203, 136, 0.8);
-}
-
-.heroBtn:hover::before {
-    left: 100%;
-}
-
-.btnText {
-    position: relative;
-    z-index: 2;
-}
-
-.btnIcon {
-    position: relative;
-    z-index: 2;
-    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.heroBtn:hover .btnIcon {
-    transform: translateX(5px);
-}
-
-.secondaryBtn {
-    padding: 1rem 2.5rem;
-    font-size: 1.15rem;
-    font-weight: 600;
-    color: var(--color-text-dark);
-    background: transparent;
-    border: none;
-    position: relative;
-}
-
-.secondaryBtn::after {
-    content: '';
-    position: absolute;
-    bottom: 10px;
-    left: 20%;
-    width: 60%;
-    height: 2px;
-    background: var(--color-border);
-    transition: all var(--transition-normal);
-}
-
-.secondaryBtn:hover::after {
-    width: 80%;
-    left: 10%;
-    background: var(--color-primary-dark);
-}
-
-.heroVisual {
-    flex: 1;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    perspective: 1000px;
-}
-
-@media (min-width: 1024px) {
-    .heroVisual {
-        height: 600px;
-    }
-}
-
-.floatingCardsWrapper {
-    position: relative;
-    width: 100%;
-    height: 500px;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.floatingCard {
-    position: absolute;
-    z-index: 10;
-}
-
-.cardFloatingAnim {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    background: rgba(255, 255, 255, 0.6);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.8);
-    box-shadow: var(--shadow-glass);
-    padding: 1rem 1.5rem;
-    border-radius: 3rem;
-    cursor: pointer;
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    animation: gentleFloat 6s ease-in-out infinite alternate;
-}
-
-.cardFloatingAnim:hover {
-    transform: scale(1.05) translateY(-5px);
-    box-shadow: 0 15px 30px rgba(238, 203, 136, 0.3), inset 0 0 15px rgba(255, 255, 255, 0.8);
-    background: rgba(255, 255, 255, 0.85);
-    border-color: rgba(238, 203, 136, 0.6);
-}
-
-@keyframes gentleFloat {
-    0% {
-        transform: translateY(0px) rotate(0deg);
-    }
-
-    100% {
-        transform: translateY(-15px) rotate(2deg);
-    }
-}
-
-.cardIconWrapper {
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, var(--color-primary-light), white);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05);
-}
-
-.cardIcon {
-    color: var(--color-primary-dark);
-}
-
-.cardText {
-    font-weight: 700;
-    color: var(--color-text-dark);
-    font-size: 1.05rem;
-}
-
-.centralOrb {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 250px;
-    height: 250px;
-    background: radial-gradient(circle, rgba(238, 203, 136, 0.2) 0%, transparent 70%);
-    border-radius: 50%;
-    filter: blur(20px);
-    z-index: 1;
-    animation: pulseOrb 4s ease-in-out infinite alternate;
-}
-
-@keyframes pulseOrb {
-    0% {
-        transform: translate(-50%, -50%) scale(1);
-        opacity: 0.5;
-    }
-
-    100% {
-        transform: translate(-50%, -50%) scale(1.2);
-        opacity: 1;
-    }
-}
-
-.waveDivider {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-    line-height: 0;
-    z-index: 5;
-}
-
-.waveDivider svg {
-    position: relative;
-    display: block;
-    width: calc(100% + 1.3px);
-    height: 120px;
-}
-
-.waveDivider .shapeFill {
-    fill: var(--color-bg);
+    display: none;
 }

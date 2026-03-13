@@ -20,7 +20,7 @@
 }
 
 .highlight {
-    background: linear-gradient(135deg, var(--color-primary-dark), #f59e0b);
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;

@@ -1,0 +1,42 @@
+.wrapper {
+    display: inline-flex;
+    gap: 0.35rem;
+    padding: 0.35rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(var(--color-primary-rgb), 0.25);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.option {
+    padding: 0.5rem 0.85rem;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--color-text-dark);
+    transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.compact {
+    padding: 0.25rem;
+    gap: 0.25rem;
+}
+
+.compact .option {
+    padding: 0.35rem 0.65rem;
+    font-size: 0.82rem;
+}
+
+.active {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+    color: #ffffff;
+}
+
+@media (max-width: 480px) {
+    .option {
+        font-size: 0.85rem;
+        padding: 0.45rem 0.7rem;
+    }
+}

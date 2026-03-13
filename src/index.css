@@ -1,32 +1,44 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Tamil:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap');
 
 :root {
-  --color-primary: #EECB88;
-  --color-primary-dark: #d4ae61;
-  --color-primary-light: #fdf5e6;
-  --color-primary-glow: rgba(238, 203, 136, 0.4);
+  /* DMK Red Primary */
+  --color-primary: #dc2626;
+  --color-primary-dark: hsl(0, 74%, 42%);
+  --color-primary-light: #fef2f2;
+  --color-primary-rgb: 220, 38, 38;
+  --color-primary-dark-rgb: 185, 28, 28;
+  --color-primary-glow: rgba(var(--color-primary-rgb), 0.5);
 
-  --color-bg: #f8fafc;
-  --color-bg-alt: #ffffff;
-  --color-bg-gradient: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  /* DMK Black Backgrounds */
+  --color-bg: #fef9e5;
+  --color-bg-alt: #f6e3b1;
+  --color-bg-gradient: radial-gradient(circle at center, #fef9e5 0%, #ecc57b 100%);
 
-  --color-text: #334155;
-  --color-text-light: #64748b;
-  --color-text-dark: #0f172a;
+  /* Warm Text for Light Background */
+  --color-text: #4b2f1e;
+  --color-text-light: #6b4b2e;
+  --color-text-dark: #3b2516;
 
-  --color-card-bg: rgba(255, 255, 255, 0.75);
-  --color-border: rgba(226, 232, 240, 0.8);
-  --color-glass: rgba(255, 255, 255, 0.65);
-  --color-glass-border: rgba(255, 255, 255, 0.5);
+  /* Dark Mode Cards/Glass */
+  --color-card-bg: rgba(226, 25, 25, 0.911);
+  --color-border: rgba(209, 17, 17, 0.836);
+  --color-glass: rgba(207, 19, 19, 0.829);
+  --color-glass-border: rgba(221, 20, 20, 0.87);
+
+  /* Navbar Light */
+  --color-nav-bg: #fef9e5;
+  --color-nav-text: #3b2516;
+  --color-nav-muted: rgba(91, 58, 35, 0.8);
+  --color-nav-border: rgba(108, 83, 48, 0.25);
 
   --font-heading: 'Inter', 'Noto Sans Tamil', sans-serif;
   --font-body: 'Roboto', 'Noto Sans Tamil', sans-serif;
 
-  --shadow-sm: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 8px 16px -4px rgba(0, 0, 0, 0.05), 0 4px 8px -4px rgba(0, 0, 0, 0.03);
-  --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
-  --shadow-glow: 0 0 25px var(--color-primary-glow);
-  --shadow-glass: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+  --shadow-sm: 0 4px 8px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 10px 20px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 25px 35px rgba(0, 0, 0, 0.4);
+  --shadow-glow: 0 0 30px var(--color-primary-glow);
+  --shadow-glass: 0 10px 40px rgba(0, 0, 0, 0.3);
 
   --radius-sm: 0.5rem;
   --radius-md: 0.75rem;

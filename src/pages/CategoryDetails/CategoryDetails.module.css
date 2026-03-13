@@ -80,24 +80,29 @@
 /* Data Table Styles */
 .tableResponsive {
     width: 100%;
+    max-width: 100%;
     overflow-x: auto;
     background: white;
-    border-radius: var(--radius-lg);
+    border-radius: 12px;
     box-shadow: var(--shadow-sm);
-    border: 1px solid var(--color-border);
+    border: 1px solid #dc2626; /* Red border from reference */
+    display: block;
 }
 
 .dataTable {
     width: 100%;
     border-collapse: collapse;
     min-width: 600px;
+    table-layout: fixed;
+    border-style: hidden;
 }
 
 .dataTable th,
 .dataTable td {
     padding: 1.25rem 1.5rem;
-    text-align: left;
-    border-bottom: 1px solid var(--color-border);
+    text-align: center;
+    border: 1px solid rgba(220, 38, 38, 0.4); /* Subtle red cell borders */
+    word-break: break-word;
 }
 
 .dataTable th {
@@ -119,8 +124,8 @@
 
 .highlightText {
     font-weight: 700;
-    color: #059669;
-    /* emerald green */
+    color: #991b1b;
+    /* dark red from reference */
 }
 
 /* Status Badges */
@@ -203,6 +208,7 @@
     grid-template-columns: 300px 1fr;
     gap: 3rem;
     align-items: start;
+    min-width: 0;
 }
 
 .sidebarNav {
@@ -277,6 +283,7 @@
     box-shadow: var(--shadow-glass);
     border: 1px solid var(--color-border);
     min-height: 400px;
+    min-width: 0;
 }
 
 .tabContent h2 {
@@ -308,4 +315,26 @@
 .htmlContent li,
 .accordionContent li {
     margin-bottom: 0.5rem;
+}
+
+/* ===== RESPONSIVE ===== */
+
+/* Tablet & Mobile: Regular Table Layout with Scroll */
+@media (max-width: 767px) {
+    .dataTable th,
+    .dataTable td {
+        padding: 0.75rem 0.5rem;
+        font-size: 0.85rem;
+    }
+
+    .tableResponsive {
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        border: 1px solid #d32f2f;
+    }
+
+    .dataTable {
+        min-width: 600px;
+    }
 }

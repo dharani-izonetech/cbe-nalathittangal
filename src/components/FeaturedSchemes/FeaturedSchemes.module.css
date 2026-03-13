@@ -4,7 +4,7 @@
     left: -5%;
     width: 400px;
     height: 400px;
-    background: radial-gradient(circle, rgba(238, 203, 136, 0.15) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(var(--color-primary-rgb), 0.14) 0%, transparent 70%);
     filter: blur(40px);
     z-index: 0;
     pointer-events: none;
@@ -62,7 +62,7 @@
 }
 
 .cardsScrollWrapper::-webkit-scrollbar-thumb {
-    background: rgba(238, 203, 136, 0.4);
+    background: rgba(var(--color-primary-rgb), 0.30);
     border-radius: 4px;
 }
 
@@ -88,8 +88,8 @@
 }
 
 .featureCard:hover {
-    box-shadow: 0 25px 50px -12px rgba(238, 203, 136, 0.25);
-    border-color: rgba(238, 203, 136, 0.4);
+    box-shadow: 0 25px 50px -12px rgba(var(--color-primary-rgb), 0.20);
+    border-color: rgba(var(--color-primary-rgb), 0.28);
 }
 
 .cardHighlight {

@@ -36,24 +36,27 @@ const allSchemes = {
     }
 };
 
-const SectionCard = ({ title, icon: Icon, children, delay }) => (
-    <motion.div
-        className={styles.sectionCard}
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay }}
-    >
-        <div className={styles.sectionHeader}>
-            <div className={styles.iconBox}>
-                <Icon size={24} className={styles.sectionIcon} />
+const SectionCard = ({ title, icon, children, delay }) => {
+    const CardIcon = icon;
+    return (
+        <motion.div
+            className={styles.sectionCard}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay }}
+        >
+            <div className={styles.sectionHeader}>
+                <div className={styles.iconBox}>
+                    <CardIcon size={24} className={styles.sectionIcon} />
+                </div>
+                <h2>{title}</h2>
             </div>
-            <h2>{title}</h2>
-        </div>
-        <div className={styles.sectionBody}>
-            {children}
-        </div>
-    </motion.div>
-);
+            <div className={styles.sectionBody}>
+                {children}
+            </div>
+        </motion.div>
+    );
+};
 
 const SchemeDetails = () => {
     const { id } = useParams();

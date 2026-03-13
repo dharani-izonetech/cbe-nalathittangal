@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useMemo, useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion,  AnimatePresence   } from 'framer-motion';
 import { ArrowLeft, ChevronDown, ChevronRight } from 'lucide-react';
 import categoriesData from '../../data/categories.json';
 import styles from './CategoryDetails.module.css';
@@ -8,17 +8,17 @@ import styles from './CategoryDetails.module.css';
 const CategoryDetails = () => {
     const { categoryId } = useParams();
     const navigate = useNavigate();
-    const [category, setCategory] = useState(null);
+
+    const category = useMemo(() => {
+        const normalizedId = (categoryId || '').trim();
+        return categoriesData.find(c => c.id.trim() === normalizedId) || null;
+    }, [categoryId]);
 
     useEffect(() => {
-        const foundCategory = categoriesData.find(c => c.id === categoryId);
-        if (foundCategory) {
-            setCategory(foundCategory);
-        } else {
-            // Redirect if not found
+        if (!category) {
             navigate('/');
         }
-    }, [categoryId, navigate]);
+    }, [category, navigate]);
 
     if (!category) return null;
 
@@ -51,7 +51,7 @@ const CategoryDetails = () => {
 
             <div className={`container ${styles.contentContainer}`}>
 
-                {/* Data Table Section */}
+                {/* Standard Data Table Section */}
                 {category.tableData && category.tableData.length > 0 && (
                     <motion.div
                         className={styles.tableSection}
@@ -81,6 +81,44 @@ const CategoryDetails = () => {
                                                     {row.status}
                                                 </span>
                                             </td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                        </div>
+                    </motion.div>
+                )}
+
+                {/* Custom Data Table Section */}
+                {category.customTable && category.customTable.length > 0 && (
+                    <motion.div
+                        className={styles.tableSection}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.3 }}
+                    >
+                        <h2 className={styles.sectionTitle}></h2>
+                        <div className={styles.tableResponsive}>
+                            <table className={styles.dataTable}>
+                                <thead>
+                                    <tr>
+                                        {category.customHeaders.map((header, idx) => (
+                                            <th key={idx}>{header}</th>
+                                        ))}
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {category.customTable.map((row, idx) => (
+                                        <tr key={idx}>
+                                            {row.map((cell, cellIdx) => (
+                                                <td 
+                                                    key={cellIdx} 
+                                                    data-label={category.customHeaders[cellIdx]}
+                                                    className={cellIdx === 1 ? styles.highlightText : ''}
+                                                >
+                                                    {cell}
+                                                </td>
+                                            ))}
                                         </tr>
                                     ))}
                                 </tbody>

@@ -22,7 +22,7 @@ const stories = [
         title: 'Sustainable Agriculture Revolution',
         description: 'Introducing modern farming equipment via heavy subsidies. 1 Million farmers trained in organic and water-saving techniques, preserving groundwater and boosting yields.',
         image: 'https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&q=80&w=800',
-        color: '#f59e0b'
+        color: '#c2412d'
     }
 ];
 

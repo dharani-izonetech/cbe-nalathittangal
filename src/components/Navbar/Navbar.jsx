@@ -1,23 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Landmark } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import styles from './Navbar.module.css';
+import { useTranslation } from '../../i18n/LanguageContext';
 
 const navLinks = [
-    { name: 'Home', path: '/' },
-    { name: 'Schemes', path: '/schemes' },
-    { name: 'Departments', path: '/departments' },
-    { name: 'Beneficiaries', path: '/beneficiaries' },
-    { name: 'Statistics', path: '/statistics' },
-    { name: 'About', path: '/about' },
-    { name: 'Contact', path: '/contact' },
+    { key: 'nav.home', path: '/' },
+    { key: 'nav.schemes', path: '/schemes' },
 ];
 
 const Navbar = () => {
     const [scrolled, setScrolled] = useState(false);
     const [isMobileOpen, setIsMobileOpen] = useState(false);
     const location = useLocation();
+    const { t } = useTranslation();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -31,28 +28,58 @@ const Navbar = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
+    const handleNavClick = (e, path) => {
+        if (path === '/schemes') {
+            e.preventDefault();
+            if (location.pathname !== '/') {
+                // If not on home page, navigate to home then scroll
+                window.location.href = '/#schemes-section';
+            } else {
+                // If on home page, smoothly scroll to element
+                const element = document.getElementById('schemes-section');
+                if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+            setIsMobileOpen(false);
+        } else if (path === '/') {
+            if (location.pathname === '/') {
+                // If already on home page, smoothly scroll to top
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                setIsMobileOpen(false);
+            }
+        }
+    };
+
     return (
         <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ''}`}>
             <div className={`container ${styles.navContainer}`}>
-                <Link to="/" className={styles.logo}>
-                    <Landmark className={styles.logoIcon} size={28} />
+                <div className={styles.navLeadersImage}>
+                    <img src="/nav-portraits.png" alt="Leaders trio" />
+                </div>
+
+                <Link to="/" className={styles.logo} onClick={(e) => handleNavClick(e, '/')}>
                     <div className={styles.logoText}>
-                        <span className={styles.titlePrimary}>GovWelfare</span>
-                        <span className={styles.titleSecondary}>Portal</span>
+                        <span className={styles.titlePrimary}>கோயம்புத்தூர்</span>
+                        <span className={styles.titleSecondary}>மாவட்ட திட்டங்கள்</span>
                     </div>
                 </Link>
 
                 {/* Desktop Menu */}
-                <div className={styles.desktopMenu}>
-                    {navLinks.map((link) => (
-                        <Link
-                            key={link.name}
-                            to={link.path}
-                            className={`${styles.navLink} ${location.pathname === link.path ? styles.active : ''}`}
-                        >
-                            {link.name}
-                        </Link>
-                    ))}
+                <div className={styles.rightArea}>
+                    <div className={styles.desktopMenu}>
+                        {navLinks.map((link) => (
+                            <Link
+                                key={link.key}
+                                to={link.path}
+                                className={`${styles.navLink} ${location.pathname === link.path ? styles.active : ''}`}
+                                onClick={(e) => handleNavClick(e, link.path)}
+                            >
+                                {t(link.key)}
+                            </Link>
+                        ))}
+                    </div>
                 </div>
 
                 {/* Mobile Toggle */}
@@ -75,12 +102,12 @@ const Navbar = () => {
                         >
                             {navLinks.map((link) => (
                                 <Link
-                                    key={link.name}
+                                    key={link.key}
                                     to={link.path}
                                     className={styles.mobileNavLink}
-                                    onClick={() => setIsMobileOpen(false)}
+                                    onClick={(e) => handleNavClick(e, link.path)}
                                 >
-                                    {link.name}
+                                    {t(link.key)}
                                 </Link>
                             ))}
                         </motion.div>
