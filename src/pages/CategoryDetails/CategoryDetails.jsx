@@ -27,9 +27,9 @@ const CategoryDetails = () => {
             {/* Header Section */}
             <div className={styles.pageHeader}>
                 <div className="container">
-                    <Link to="/" className={styles.backLink}>
-                        <ArrowLeft size={18} /> Back to Home
-                    </Link>
+                    <button onClick={() => navigate(-1)} className={styles.backLink} style={{ background: 'none', border: 'none', padding: 0, font: 'inherit', cursor: 'pointer' }}>
+                        <ArrowLeft size={18} /> Back
+                    </button>
 
                     <motion.h1
                         className={styles.title}

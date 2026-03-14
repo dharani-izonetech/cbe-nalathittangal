@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowLeft, CheckCircle2, FileText, Building, Milestone, ShieldCheck, BadgeCheck } from 'lucide-react';
 import styles from './SchemeDetails.module.css';
@@ -60,6 +60,7 @@ const SectionCard = ({ title, icon, children, delay }) => {
 
 const SchemeDetails = () => {
     const { id } = useParams();
+    const navigate = useNavigate();
     const scheme = allSchemes[id] || allSchemes['1']; // fallback for demo
 
     return (
@@ -67,9 +68,9 @@ const SchemeDetails = () => {
             {/* Hero Header for Details */}
             <div className={styles.pageHeader}>
                 <div className="container">
-                    <Link to="/schemes" className={styles.backLink}>
-                        <ArrowLeft size={18} /> Back to Schemes
-                    </Link>
+                    <button onClick={() => navigate(-1)} className={styles.backLink} style={{ background: 'none', border: 'none', padding: 0, font: 'inherit', cursor: 'pointer' }}>
+                        <ArrowLeft size={18} /> Back
+                    </button>
                     <motion.div
                         className={styles.departmentBadge}
                         initial={{ opacity: 0, scale: 0.8 }}

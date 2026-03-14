@@ -16,18 +16,18 @@
 
 @media (max-width: 1024px) {
     .heroSection {
-        height: 100svh;
-        min-height: 100svh;
-        display: flex;
-        padding: 0;
+        height: auto;
+        min-height: auto;
+        display: block;
+        padding-top: 70px; /* clear the sticky navbar */
     }
 }
 
 @media (max-width: 767px) {
     .heroSection {
-        /* Ensure no extra padding or margin on small devices */
-        height: 100svh;
-        min-height: -webkit-fill-available;
+        height: auto;
+        min-height: auto;
+        padding-top: 76px;
     }
 }
 
@@ -53,27 +53,27 @@
 
 @media (max-width: 1024px) {
     .videoBackground {
-        position: absolute;
-        height: 100%;
+        position: relative;
+        height: auto;
         overflow: hidden;
     }
 
     .videoBackground video {
-        position: absolute;
-        height: 100%;
+        position: relative;
+        height: auto;
         width: 100%;
-        object-fit: cover;
-        background: #000;
-        object-position: center 70%; /* Consistent centering for mobile */
+        max-width: 100vw;
+        object-fit: contain;
+        background: transparent;
+        display: block;
     }
 }
 
 @media (max-width: 767px) {
     .videoBackground video {
-        /* On very small screens, slight zoom can help keep centered text legible */
         width: 100%;
-        height: 100%;
-        object-fit: cover;
+        height: auto;
+        object-fit: contain;
     }
 }
 
