@@ -5,9 +5,12 @@ import CategorySection from '../../components/CategorySection/CategorySection';
 import homeSectionsData from '../../data/home_sections.json';
 import styles from './Home.module.css';
 import { useTranslation } from '../../i18n/LanguageContext';
+import videoDesk from '../../assets/hero-bg-desktop.mp4'
+import videoMob from '../../assets/hero-bg-mobile.mp4'
 
 const Hero = () => {
     const [isMobile, setIsMobile] = React.useState(window.innerWidth <= 1024);
+    const videoRef = React.useRef(null); // Create a ref for the video
 
     React.useEffect(() => {
         const handleResize = () => setIsMobile(window.innerWidth <= 1024);
@@ -15,17 +18,24 @@ const Hero = () => {
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
-    const videoSrc = isMobile ? "/hero_mobile.mp4" : "/hero_bg.mp4";
+    React.useEffect(() => {
+        if (videoRef.current) {
+            videoRef.current.playbackRate = 0.8; // slow motion: half speed
+        }
+    }, [isMobile]); // re-run if video source changes
+
+    const videoSrc = isMobile ? videoMob : videoDesk;
 
     return (
         <section className={styles.heroSection} id="hero-section">
             <div className={styles.videoBackground}>
-                <video 
-                    autoPlay 
-                    muted 
-                    loop 
-                    playsInline 
-                    key={videoSrc} /* Force re-render when source changes */
+                <video
+                    ref={videoRef}        // attach the ref
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    key={videoSrc}        // Force re-render when source changes
                 >
                     <source src={videoSrc} type="video/mp4" />
                 </video>
