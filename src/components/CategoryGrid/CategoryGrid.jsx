@@ -58,6 +58,9 @@ const CategoryGrid = () => {
         }
         button.appendChild(circle);
 
+        // Save scroll position before navigating so back button can restore it on mobile
+        sessionStorage.setItem('homeScrollY', String(window.scrollY));
+
         // Navigate after short delay for ripple effect
         setTimeout(() => {
             navigate(`/category/${id}`);
