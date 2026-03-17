@@ -1,25 +1,21 @@
-
 .heroSection {
     position: relative;
     width: 100%;
-    height: 100vh;
-    height: 100svh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    height: calc(100vh - 80px); /* keep */
+    margin-top: 80px; /* ✅ pushes below navbar */
     overflow: hidden;
-    padding: 0;
-    margin: 0;
-    background: #000; /* Dark fallback for video */
+    background: #000;
     color: #fff;
 }
 
+/* MOBILE - keep your logic */
 @media (max-width: 1024px) {
     .heroSection {
         height: auto;
         min-height: auto;
         display: block;
-        padding-top: 70px; /* clear the sticky navbar */
+        padding-top: 0; /* ❌ REMOVE extra space */
+        margin-top: 70px; /* ✅ use margin instead */
     }
 }
 
@@ -27,65 +23,60 @@
     .heroSection {
         height: auto;
         min-height: auto;
-        padding-top: 76px;
+        padding-top: 0; /* ❌ REMOVE */
+        margin-top: 76px; /* ✅ correct spacing */
     }
 }
 
+/* 🔥 IMPORTANT FIX */
 .videoBackground {
-    position: absolute;
+    position: absolute; /* ✅ KEEP absolute for full video */
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 1;
-    /* Above heroSection background, below heroContainer */
-    overflow: hidden;
-    pointer-events: none;
 }
 
+/* VIDEO */
 .videoBackground video {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover; /* desktop full fill */
     display: block;
-    object-position: center 70%; /* Shift up to center the bottom-aligned text */
+    object-position: center top;
 }
 
+/* TABLET */
 @media (max-width: 1024px) {
     .videoBackground {
         position: relative;
         height: auto;
-        overflow: hidden;
     }
 
     .videoBackground video {
-        position: relative;
-        height: auto;
         width: 100%;
-        max-width: 100vw;
+        height: auto;
         aspect-ratio: 9 / 16;
-        object-fit: contain;
-        background: transparent;
-        display: block;
+        object-fit: contain; /* show full video */
     }
 }
 
+/* MOBILE */
 @media (max-width: 767px) {
     .videoBackground video {
         width: 100%;
         height: auto;
-        object-fit: contain;
+        object-fit: contain; /* 🔥 full video visible */
     }
 }
 
-/* Clear overlay to ensure video is fully visible */
+/* LIGHT OVERLAY */
 .videoBackground::after {
     content: '';
     position: absolute;
     inset: 0;
     background: rgba(0, 0, 0, 0.05);
-    /* Extremely subtle overlay */
-    z-index: 2;
+    z-index: 1;
 }
 
 .heroBackground {
