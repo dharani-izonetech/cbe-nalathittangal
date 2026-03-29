@@ -11,13 +11,6 @@
     color: var(--color-nav-text);
 }
 
-.scrolled {
-    padding: 0.2rem 0;
-    background: radial-gradient(circle at center, #fef9e5 0%, #ecc57b 100%);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.726);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.788);
-}
-
 .navContainer {
     display: flex;
     justify-content: space-between;

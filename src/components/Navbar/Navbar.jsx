@@ -11,22 +11,9 @@ const navLinks = [
 ];
 
 const Navbar = () => {
-    const [scrolled, setScrolled] = useState(false);
     const [isMobileOpen, setIsMobileOpen] = useState(false);
     const location = useLocation();
     const { t } = useTranslation();
-
-    useEffect(() => {
-        const handleScroll = () => {
-            if (window.scrollY > 50) {
-                setScrolled(true);
-            } else {
-                setScrolled(false);
-            }
-        };
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
 
     const handleNavClick = (e, path) => {
         if (path === '/schemes') {
@@ -53,7 +40,7 @@ const Navbar = () => {
     };
 
     return (
-        <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ''}`}>
+        <nav className={styles.navbar}>
             <div className={`container ${styles.navContainer}`}>
                 <div className={styles.navLeadersImage}>
                     <img src="/nav-portraits.png" alt="Leaders trio" />
