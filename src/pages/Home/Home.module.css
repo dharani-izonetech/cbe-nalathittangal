@@ -1,84 +1,53 @@
 .heroSection {
     position: relative;
     width: 100%;
-    height: calc(100vh - 80px); /* keep */
-    margin-top: 80px; /* ✅ pushes below navbar */
-    overflow: hidden;
-    background: #000;
-    color: #fff;
+    height: 100vh;
+    margin-top: 20px;
+    background-color: #f00014;
+    /* match poster background */
 }
 
-/* MOBILE - keep your logic */
-@media (max-width: 1024px) {
-    .heroSection {
-        height: auto;
-        min-height: auto;
-        display: block;
-        padding-top: 0; /* ❌ REMOVE extra space */
-        margin-top: 70px; /* ✅ use margin instead */
-    }
-}
-
-@media (max-width: 767px) {
-    .heroSection {
-        height: auto;
-        min-height: auto;
-        padding-top: 0; /* ❌ REMOVE */
-        margin-top: 76px; /* ✅ correct spacing */
-    }
-}
-
-/* 🔥 IMPORTANT FIX */
-.videoBackground {
-    position: absolute; /* ✅ KEEP absolute for full video */
+/* picture element stretches to fill section */
+.heroPicture {
+    position: absolute;
     top: 0;
     left: 0;
+    margin-top: 70px;
     width: 100%;
     height: 100%;
+    display: block;
 }
 
-/* VIDEO */
-.videoBackground video {
+/* Hero image fills the section */
+.heroImage {
+
     width: 100%;
     height: 100%;
-    object-fit: cover; /* desktop full fill */
-    display: block;
+    object-fit: contain;
+    /* desktop: fill & crop */
     object-position: center top;
+    display: block;
 }
 
 /* TABLET */
 @media (max-width: 1024px) {
-    .videoBackground {
-        position: relative;
-        height: auto;
-    }
-
-    .videoBackground video {
-        width: 100%;
-        height: auto;
-        aspect-ratio: 9 / 16;
-        object-fit: contain; /* show full video */
+    .heroSection {
+        height: calc(100vh - 70px);
+        margin-top: 70px;
     }
 }
 
-/* MOBILE */
+/* MOBILE — portrait image, show full without cropping */
 @media (max-width: 767px) {
-    .videoBackground video {
-        width: 100%;
-        height: auto;
-        object-fit: contain; /* 🔥 full video visible */
+    .heroSection {
+        height: calc(100vh - 70px);
+        margin-top: 20px;
     }
-}
 
-/* LIGHT OVERLAY */
-.videoBackground::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.05);
-    z-index: 1;
-}
+    .heroImage {
+        object-fit: cover;
+        /* mobile: fill hero section, no empty space */
+        object-position: center center;
 
-.heroBackground {
-    display: none;
+    }
 }
