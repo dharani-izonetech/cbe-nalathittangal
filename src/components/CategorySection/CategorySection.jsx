@@ -4,41 +4,6 @@ import { ChevronDown, ChevronRight } from 'lucide-react';
 import styles from './CategorySection.module.css';
 import { useTranslation } from '../../i18n/LanguageContext';
 
-const TableView = ({ headers, data }) => {
-    if (!headers || !data) return null;
-    return (
-        <div className={styles.tableResponsive}>
-            <table className={styles.dataTable}>
-                <thead>
-                    <tr>
-                        {headers.map((header, idx) => (
-                            <th key={idx}>{header}</th>
-                        ))}
-                    </tr>
-                </thead>
-                <tbody>
-                    {data.map((row, idx) => {
-                        const isTotal = row[row.length - 1] === 'total';
-                        const displayRow = isTotal ? row.slice(0, -1) : row;
-                        return (
-                            <tr key={idx} className={isTotal ? styles.totalRow : ''}>
-                                {displayRow.map((cell, cellIdx) => (
-                                    <td
-                                        key={cellIdx}
-                                        data-label={headers[cellIdx]}
-                                        className={cellIdx === 1 ? styles.highlightText : ''}
-                                        dangerouslySetInnerHTML={{ __html: cell }}
-                                    />
-                                ))}
-                            </tr>
-                        );
-                    })}
-                </tbody>
-            </table>
-        </div>
-    );
-};
-
 const CategorySection = ({ category }) => {
     const { t } = useTranslation();
     const [activeTab, setActiveTab] = useState('');
@@ -61,11 +26,15 @@ const CategorySection = ({ category }) => {
     }, []);
 
     const selectTab = (id) => {
-        setActiveTab(id);
-        setTimeout(() => {
-            contentRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }, 50);
-    };
+    setActiveTab(id);
+    setTimeout(() => {
+        if (contentRef.current) {
+            const offset = 100; // adjust this to match your navbar height
+            const top = contentRef.current.getBoundingClientRect().top + window.scrollY - offset;
+            window.scrollTo({ top, behavior: 'smooth' });
+        }
+    }, 50);
+};
 
     const toggleAccordion = (id) => {
         setActiveTab(activeTab === id ? '' : id);
@@ -108,14 +77,8 @@ const CategorySection = ({ category }) => {
                                             >
                                                 <div className={styles.accordionContent}>
                                                     {(sub.content || '').split('\n').filter(p => p.trim()).map((paragraph, i) => (
-                                                        <p key={i}>{paragraph}</p>
+                                                        <p key={i} dangerouslySetInnerHTML={{ __html: paragraph }} />
                                                     ))}
-                                                    {sub.customTable && (
-                                                        <TableView 
-                                                            headers={sub.customHeaders} 
-                                                            data={sub.customTable} 
-                                                        />
-                                                    )}
                                                 </div>
                                             </motion.div>
                                         )}
@@ -157,14 +120,8 @@ const CategorySection = ({ category }) => {
                                                 <h2>{sub.title}</h2>
                                                 <div className={styles.htmlContent}>
                                                     {(sub.content || '').split('\n').filter(p => p.trim()).map((paragraph, i) => (
-                                                        <p key={i}>{paragraph}</p>
+                                                        <p key={i} dangerouslySetInnerHTML={{ __html: paragraph }} />
                                                     ))}
-                                                    {sub.customTable && (
-                                                        <TableView 
-                                                            headers={sub.customHeaders} 
-                                                            data={sub.customTable} 
-                                                        />
-                                                    )}
                                                 </div>
                                             </motion.div>
                                         )

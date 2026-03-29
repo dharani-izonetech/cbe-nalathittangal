@@ -1,6 +1,6 @@
 import React, { useMemo, useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
-import { motion,  AnimatePresence   } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowLeft, ChevronDown, ChevronRight } from 'lucide-react';
 import categoriesData from '../../data/categories.json';
 import styles from './CategoryDetails.module.css';
@@ -43,9 +43,8 @@ const CategoryDetails = () => {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.2 }}
-                    >
-                        {category.description}
-                    </motion.p>
+                        dangerouslySetInnerHTML={{ __html: category.description }}
+                    />
                 </div>
             </div>
 
@@ -111,8 +110,8 @@ const CategoryDetails = () => {
                                     {category.customTable.map((row, idx) => (
                                         <tr key={idx}>
                                             {row.map((cell, cellIdx) => (
-                                                <td 
-                                                    key={cellIdx} 
+                                                <td
+                                                    key={cellIdx}
                                                     data-label={category.customHeaders[cellIdx]}
                                                     className={cellIdx === 1 ? styles.highlightText : ''}
                                                 >
